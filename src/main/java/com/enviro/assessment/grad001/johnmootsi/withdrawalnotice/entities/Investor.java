@@ -24,7 +24,7 @@ public class Investor {
     private String investorLastname;
     @Basic
     @Column(name = "investor_age", nullable = false)
-    private Double investorAge;
+    private int investorAge;
     @Basic
     @Column(name = "investor_contact", nullable = false)
     private String investorContact;
@@ -53,7 +53,7 @@ public class Investor {
     public Investor() {
     }
 
-    public Investor(String investorName, String investorLastname, Double investorAge, String investorContact, String investorAddress) {
+    public Investor(String investorName, String investorLastname, int investorAge, String investorContact, String investorAddress) {
         this.investorName = investorName;
         this.investorLastname = investorLastname;
         this.investorAge = investorAge;
@@ -85,11 +85,11 @@ public class Investor {
         this.investorLastname = investorLastname;
     }
 
-    public Double getInvestorAge() {
+    public int getInvestorAge() {
         return investorAge;
     }
 
-    public void setInvestorAge(Double investorAge) {
+    public void setInvestorAge(int investorAge) {
         this.investorAge = investorAge;
     }
 
