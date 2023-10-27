@@ -5,4 +5,5 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Invest
 public interface InvestmentService {
 
     Investment loadInvestmentById(Long investmentId);
+    Investment createOrUpdateInvestment(Investment investment);
 }

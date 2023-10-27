@@ -14,4 +14,9 @@ public class InvestmentServiceImplementation implements InvestmentService {
     public Investment loadInvestmentById(Long investmentId) {
         return investmentDao.findById(investmentId).orElseThrow(() -> new EntityNotFoundException("Investment id: "+investmentId+" not found"));
     }
+
+    @Override
+    public Investment createOrUpdateInvestment(Investment investment) {
+        return investmentDao.save(investment);
+    }
 }
