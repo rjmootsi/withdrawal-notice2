@@ -2,13 +2,16 @@ package com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.controllers;
 
 
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Investor;
-import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Notification;
+import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Product;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.WithdrawalNotice;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.serviceImplementations.InvestorServiceImplementation;
+import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.serviceImplementations.ProductServiceImplementation;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.serviceImplementations.WithdrawalNoticeServiceImplementation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -16,10 +19,12 @@ public class WithdrawalNoticeController {
 
     private InvestorServiceImplementation investorService;
     private WithdrawalNoticeServiceImplementation withdrawalNoticeService;
+    private ProductServiceImplementation productService;
 
-    public WithdrawalNoticeController(InvestorServiceImplementation investorService, WithdrawalNoticeServiceImplementation withdrawalNoticeService) {
+    public WithdrawalNoticeController(InvestorServiceImplementation investorService, WithdrawalNoticeServiceImplementation withdrawalNoticeService, ProductServiceImplementation productService) {
         this.investorService = investorService;
         this.withdrawalNoticeService = withdrawalNoticeService;
+        this.productService = productService;
     }
 
     @GetMapping("/hello")
@@ -35,6 +40,11 @@ public class WithdrawalNoticeController {
     }
 
     // Get products
+    @GetMapping("/products/{keyword}")
+    public ResponseEntity<List<Product>> getProductsByType(@PathVariable String keyword) {
+        List<Product> products = productService.findProductsByProductType(keyword);
+        return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
+    }
 
     // Add investor
     @PostMapping("/investors")
