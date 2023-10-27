@@ -4,9 +4,11 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Invest
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface InvestorDao extends JpaRepository<Investor, Long> {
     // Method not available in the Repository hence added here
     // Using Java classes as opposed to Sql fields
