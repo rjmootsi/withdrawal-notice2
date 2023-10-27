@@ -6,9 +6,11 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Invest
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Product;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.ProductService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImplementation implements ProductService {
 
     // Dependencies needed

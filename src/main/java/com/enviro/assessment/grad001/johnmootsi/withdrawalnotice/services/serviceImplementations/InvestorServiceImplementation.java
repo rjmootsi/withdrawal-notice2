@@ -6,9 +6,11 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Produc
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.InvestorService;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.ProductService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class InvestorServiceImplementation implements InvestorService {
     private InvestorDao investorDao;
     private ProductService productService;

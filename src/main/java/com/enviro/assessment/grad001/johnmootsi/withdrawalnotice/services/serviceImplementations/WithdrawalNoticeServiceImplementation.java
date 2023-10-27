@@ -11,10 +11,12 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.Produc
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.WithdrawalNoticeService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ValidationException;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class WithdrawalNoticeServiceImplementation implements WithdrawalNoticeService {
 
     private WithdrawalNoticeDao withdrawalNoticeDao;

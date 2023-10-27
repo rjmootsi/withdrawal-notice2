@@ -4,7 +4,9 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.dao.BankingDeta
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.BankingDetails;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.BankingDetailsService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BankingDetailsServiceImplementation implements BankingDetailsService {
     private BankingDetailsDao bankingDetailsDao;
 

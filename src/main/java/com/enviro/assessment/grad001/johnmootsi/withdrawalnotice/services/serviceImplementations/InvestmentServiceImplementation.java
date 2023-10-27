@@ -4,7 +4,9 @@ import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.dao.InvestmentD
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.entities.Investment;
 import com.enviro.assessment.grad001.johnmootsi.withdrawalnotice.services.InvestmentService;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class InvestmentServiceImplementation implements InvestmentService {
     private InvestmentDao investmentDao;
 
