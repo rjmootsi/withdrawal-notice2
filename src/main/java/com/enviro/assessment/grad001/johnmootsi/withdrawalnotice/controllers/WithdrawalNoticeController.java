@@ -43,6 +43,12 @@ public class WithdrawalNoticeController {
         return new ResponseEntity<Investor>(investor, HttpStatus.OK);
     }
 
+    @GetMapping("/investors/investor/{name}")
+    public ResponseEntity<List<Investor>> findInvestorsByName(@PathVariable(name = "name") String name) {
+        List<Investor> investor = investorService.findInvestorsByName(name);
+        return new ResponseEntity<List<Investor>>(investor, HttpStatus.OK);
+    }
+
     // Get products
     @GetMapping("/products/{keyword}")
     public ResponseEntity<List<Product>> getProductsByType(@PathVariable String keyword) {
@@ -53,7 +59,7 @@ public class WithdrawalNoticeController {
     // Add investor
     @PostMapping("/investors")
     public ResponseEntity<Void> addInvestor(@RequestBody Investor investor) {
-       investorService.updateInvestor(investor);
+       investorService.createOrUpdateInvestor(investor);
        return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
 

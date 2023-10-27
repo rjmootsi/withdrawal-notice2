@@ -36,7 +36,7 @@ public class InvestorServiceImplementation implements InvestorService {
     }
 
     @Override
-    public Investor updateInvestor(Investor investor) {
+    public Investor createOrUpdateInvestor(Investor investor) {
         return investorDao.save(investor);
     }
 

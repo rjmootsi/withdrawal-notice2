@@ -9,7 +9,7 @@ public interface InvestorService {
     Investor loadInvestorById(Long investorId);
     List<Investor> findInvestorsByName(String name);
     Investor createInvestor(String investorName, String investorLastname, int investorAge, String address, String contact);
-    Investor updateInvestor(Investor investor);
+    Investor createOrUpdateInvestor(Investor investor);
     List<Investor> findInvestors();
     void removeInvestor(Long investorId);
 }
